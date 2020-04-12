@@ -12,9 +12,15 @@ class Start:
             os.makedirs(self.dirSaida)
     def runNMPL(self):
         self.createOutDir()
+        if not os.path.exists(self.dirEntrada):
+            print('Diretorio de entrada nao existe, criando diretorio. Insira arquivos .csv na pasta entrada')
+            os.makedirs(self.dirEntrada)
+            return
+        if not os.listdir(self.dirEntrada):
+                print("Diretorio de entrada vazio")
+                return
         for fileName in glob.glob(self.dirEntrada + '*.csv'):
             x = np.genfromtxt(fileName, delimiter=",")
-            #inserir aqui chamada da função de saida.
             print(fileName)
             
 
