@@ -17,8 +17,8 @@ class Start:
             os.makedirs(self.dirEntrada)
             return
         if not os.listdir(self.dirEntrada):
-                print("Diretorio de entrada vazio")
-                return
+            print("Diretorio de entrada vazio")
+            return
         for fileName in glob.glob(self.dirEntrada + '*.csv'):
             x = np.genfromtxt(fileName, delimiter=",")
             print(fileName)
