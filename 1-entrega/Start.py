@@ -21,8 +21,8 @@ class Start:
             return
         for fileName in glob.glob(self.dirEntrada + '*.csv'):
             x = np.genfromtxt(fileName, delimiter=",")
-            print(fileName)
+            print(x)
             
-
-st = Start()
-st.runNMPL()
+if __name__ == "__main__":
+    st = Start()
+    st.runNMPL()
