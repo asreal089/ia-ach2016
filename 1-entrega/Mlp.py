@@ -1,10 +1,12 @@
-import nump as np
+import numpy as np
 
 class MLP:
 
-    def __init__(self):
+    def __init__(self, entrada, saida):
         np.random.seed(1)
         self.synapcticWeights = 2 * np.random.random((3,1)) -1
+        self.entrada = entrada
+        self.saida = saida
 
     def sigmoid(self, x):
         return 1/(1 + np.exp(x))
@@ -26,7 +28,7 @@ if __name__ == "__main__":
     print("pesos randomicos")
     print(mlp.synapcticWeights)
 
-    trainingInputs = ()
-    trainingOutputs =()
+    trainingInputs = (self.entrada)
+    trainingOutputs =(self.saida)
 
     mlp.train(trainingInput, trainingOutputs, 1000)
